@@ -10,13 +10,6 @@ type Users struct {
 	Ktp         string `json:"ktp" form:"ktp"`
 }
 
-func (user *Users) CreateUser() error {
-	if err := config.DB.Create(user).Error; err != nil {
-		return err
-	}
-	return nil
-}
-
 func GetUsers(keywords string) ([]Users, error) {
 	var users []Users
 	result := config.DB.Where("email LIKE ? OR nama LIKE ?", "%"+keywords+"%", "%"+keywords+"%").Find(&users)
