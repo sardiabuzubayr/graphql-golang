@@ -24,9 +24,9 @@ You can copy this table structure to run this project. Change your database conf
 
 ## Tes with Postman ##
 You can test this graphql api with postman. Example of result is like that if it works : <br/>
-![](../go-graphql-api/01.png)<br/>
+![](01.png)<br/>
 <i>Request all field without filter</i><br/>
-![](../go-graphql-api/02.png)<br/>
+![](02.png)<br/>
 <i>Request with specified field</i><br/>
-![](../go-graphql-api/03.png)<br/>
+![](03.png)<br/>
 <i>Request with specified field and filter</i>
