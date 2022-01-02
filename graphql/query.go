@@ -4,7 +4,6 @@ import (
 	"mygraphql/model"
 
 	"github.com/graphql-go/graphql"
-	"gorm.io/gorm"
 )
 
 var (
@@ -48,7 +47,7 @@ func levelData() *graphql.Field {
 	}
 }
 
-func usersData(db *gorm.DB) *graphql.Field {
+func usersData() *graphql.Field {
 	return &graphql.Field{
 		Type: graphql.NewList(user),
 		Resolve: func(p graphql.ResolveParams) (interface{}, error) {
@@ -63,11 +62,11 @@ func usersData(db *gorm.DB) *graphql.Field {
 	}
 }
 
-func newQuery(db *gorm.DB) *graphql.Object {
+func newQuery() *graphql.Object {
 	return graphql.NewObject(graphql.ObjectConfig{
 		Name: "Query",
 		Fields: graphql.Fields{
-			"users": usersData(db),
+			"users": usersData(),
 			"level": levelData(),
 		},
 	})
