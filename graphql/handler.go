@@ -3,10 +3,9 @@ package graphql
 import (
 	"github.com/graphql-go/graphql"
 	"github.com/graphql-go/handler"
-	"gorm.io/gorm"
 )
 
-func NewHandler(db *gorm.DB) (*handler.Handler, error) {
+func NewHandler() (*handler.Handler, error) {
 	schema, err := graphql.NewSchema(
 		graphql.SchemaConfig{
 			Query: newQuery(),

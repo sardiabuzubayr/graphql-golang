@@ -12,7 +12,7 @@ func main() {
 	config.ConnectDB()
 	route := echo.New()
 
-	h, err := graphql.NewHandler(config.DB)
+	h, err := graphql.NewHandler()
 	if err != nil {
 		fmt.Println(err)
 	}
